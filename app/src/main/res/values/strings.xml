@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ActivityResultCallbackUtil</string>
+    <string name="hi_i_m_result">Hi I\'m result</string>
+</resources>
