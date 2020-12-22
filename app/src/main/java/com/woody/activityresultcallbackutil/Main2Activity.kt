@@ -20,7 +20,7 @@ class Main2Activity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main2)
 
-        binding.sendResult.setOnClickListener() {
+        binding.sendResult.setOnClickListener {
             val resultText = binding.resultEditText.text.toString()
             val dataIntent = Intent()
             dataIntent.putExtra(KEY_RESULT_TEXT, resultText)

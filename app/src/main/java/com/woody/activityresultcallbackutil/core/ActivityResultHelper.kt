@@ -18,14 +18,10 @@ class ActivityResultHelper(private val mContext: AppCompatActivity) {
         requestCode: Int,
         resultCode: Int,
         data: Intent?
-    ): Boolean {
-        val actOb = mActResultNotifications[requestCode]
-        return if (actOb != null) {
-            actOb(resultCode, data)
+    ) {
+        mActResultNotifications[requestCode]?.let {
+            it(resultCode, data)
             mActResultNotifications.delete(requestCode)
-            true
-        } else {
-            false
         }
     }
 

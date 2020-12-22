@@ -3,6 +3,7 @@ package com.woody.activityresultcallbackutil.core
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.util.Log
+import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import com.woody.activityresultcallbackutil.Main2Activity
 
@@ -12,9 +13,9 @@ open class BaseActivity : AppCompatActivity() {
         ActivityResultHelper(this)
     }
 
+    @CallSuper
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        val resultText = data!!.getStringExtra(Main2Activity.KEY_RESULT_TEXT)
         activityResultHelper.notifyActResultObserver(requestCode, resultCode, data)
     }
 }
